@@ -1,0 +1,12 @@
+﻿global using Microsoft.EntityFrameworkCore;
+global using MyBlog.Entity.Entities;
+global using Microsoft.EntityFrameworkCore.Metadata.Builders;
+global using System.Reflection;
+global using MyBlog.Data.Repositories.Abstract;
+global using MyBlog.Data.Database;
+global using MyBlog.Core.Entities;
+global using System.Linq.Expressions;
+global using Microsoft.Extensions.Configuration;
+global using Microsoft.Extensions.DependencyInjection;
+global using MyBlog.Data.Repositories.Concrete;
+global using MyBlog.Data.UnitOfWorks;
