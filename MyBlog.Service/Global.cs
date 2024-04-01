@@ -3,3 +3,7 @@ global using MyBlog.Entity.Entities;
 global using MyBlog.Data.UnitOfWorks;
 global using Microsoft.Extensions.DependencyInjection;
 global using MyBlog.Service.Services.Concrete;
+global using AutoMapper;
+global using MyBlog.Entity.ViewModels.Articles;
+global using MyBlog.Service.AutoMapper.Articles;
+global using System.Reflection;
