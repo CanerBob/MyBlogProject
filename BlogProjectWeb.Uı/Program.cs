@@ -6,7 +6,7 @@ using MyBlog.Service.Extensions;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 builder.Services.LoadDataLayerExtensions(builder.Configuration);
 builder.Services.LoadServiceLayerExtensions();
 
@@ -23,8 +23,14 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+app.UseEndpoints(endpoints => 
+{
+    endpoints.MapAreaControllerRoute(
+        name: "Admin",
+        areaName: "Admin",
+        pattern:"Admin/{controller=Home}/{action=Index}/{id?}"
+        );
+    endpoints.MapDefaultControllerRoute();
+});
 
 app.Run();
