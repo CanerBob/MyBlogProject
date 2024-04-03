@@ -10,6 +10,9 @@ builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 builder.Services.LoadDataLayerExtensions(builder.Configuration);
 builder.Services.LoadServiceLayerExtensions();
 
+
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

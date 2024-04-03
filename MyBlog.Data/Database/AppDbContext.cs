@@ -1,5 +1,5 @@
 ﻿namespace MyBlog.Data.Database;
-public class AppDbContext: DbContext
+public class AppDbContext: IdentityDbContext<AppUser,AppRole,Guid,AppUserClaim,AppUserRole,AppUserLogin,AppRoleClaim,AppUserToken>
 {
     public AppDbContext(){}
 

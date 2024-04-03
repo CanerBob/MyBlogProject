@@ -1,6 +1,4 @@
-﻿
-
-namespace MyBlog.Data.Extensions;
+﻿namespace MyBlog.Data.Extensions;
 public static class DataLayerExtensions
 {
     public static IServiceCollection LoadDataLayerExtensions(this IServiceCollection services, IConfiguration configuration) 

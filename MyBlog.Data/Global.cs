@@ -10,3 +10,4 @@ global using Microsoft.Extensions.Configuration;
 global using Microsoft.Extensions.DependencyInjection;
 global using MyBlog.Data.Repositories.Concrete;
 global using MyBlog.Data.UnitOfWorks;
+global using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
