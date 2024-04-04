@@ -30,7 +30,8 @@ public class UserMap : IEntityTypeConfiguration<AppUser>
             PhoneNumberConfirmed = true,
             FirstName = "Caner",
             LastName = "Bayraktar",
-            ImageId = Guid.Parse("F406068B-EC45-4D22-B22E-084B4705D8B5")
+            ImageId = Guid.Parse("F406068B-EC45-4D22-B22E-084B4705D8B5"),
+            SecurityStamp = Guid.NewGuid().ToString()
         };
         superadmin.PasswordHash = CreatePasswpordHash(superadmin, "Superadmin123");
         var admin = new AppUser 
@@ -45,10 +46,27 @@ public class UserMap : IEntityTypeConfiguration<AppUser>
             PhoneNumberConfirmed = false,
             FirstName = "Çağatay",
             LastName = "Bayraktar",
-            ImageId = Guid.Parse("F5A4AAB2-01F0-407B-A20F-6CBD053EFD76")
+            ImageId = Guid.Parse("F5A4AAB2-01F0-407B-A20F-6CBD053EFD76"),
+            SecurityStamp = Guid.NewGuid().ToString()
         };
         admin.PasswordHash = CreatePasswpordHash(admin, "Admin123");
-        builder.HasData(superadmin, admin);
+        var user = new AppUser 
+        {
+            Id = Guid.Parse("EEB3A51F-5450-4C4F-8562-550D2DEAE903"),
+            UserName = "CanerBob",
+            NormalizedUserName = "CANERBOB",
+            Email = "deneme@gmail.com",
+            NormalizedEmail = "DENEME@GMAİL.COM",
+            PhoneNumber = "0555 555 55 11",
+            EmailConfirmed = false,
+            PhoneNumberConfirmed = false,
+            FirstName = "Çağatay",
+            LastName = "Bayraktar",
+            ImageId = Guid.Parse("F5A4AAB2-01F0-407B-A20F-6CBD053EFD76"),
+            SecurityStamp = Guid.NewGuid().ToString()
+        };
+        user.PasswordHash = CreatePasswpordHash(user, "Canerbob123**");
+        builder.HasData(superadmin, admin,user);
     }
     private string CreatePasswpordHash(AppUser user, string password) 
     {
