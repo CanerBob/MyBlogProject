@@ -30,7 +30,7 @@ builder.Services.ConfigureApplicationCookie(cfg =>
      Name = "MyBlogProject",
      HttpOnly = true,
      SameSite = SameSiteMode.Strict,
-     SecurePolicy = CookieSecurePolicy.SameAsRequest
+     SecurePolicy = CookieSecurePolicy.Always,
     };
     cfg.SlidingExpiration = true;
     cfg.ExpireTimeSpan = TimeSpan.FromDays(1);

@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MyBlog.Service.Services.Abstract;
 
 namespace BlogProjectWeb.Uı.Areas.Admin.Controllers;
 [Area("Admin")]
+[Authorize]
 public class HomeController : Controller
 {
     private readonly IArticleService articleService;

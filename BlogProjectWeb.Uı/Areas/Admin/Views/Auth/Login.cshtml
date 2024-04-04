@@ -1,0 +1,21 @@
+﻿@model UserLoginViewModel
+@{
+    Layout = null;
+}
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/style.css" />
+</head>
+<body>
+    <div class="login-form">
+        <form asp-area="Admin" asp-controller="Auth" asp-action="Login">
+            <h1>Giriş Yap</h1>
+            <div asp-validation-summary="All"></div>
+            <input asp-for="UserName"  placeholder="Kullanıcı Adınız" class="txt">
+            <input asp-for="Password" type="password" placeholder="Parolanız" class="txt">
+            <input type="submit" value="Giriş Yap" class="login-btn">
+            <a href="#">Kayıt Ol</a>
+        </form>
+    </div>
+</body>
+</html>
