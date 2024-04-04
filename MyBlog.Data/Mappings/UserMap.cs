@@ -30,6 +30,7 @@ public class UserMap : IEntityTypeConfiguration<AppUser>
             PhoneNumberConfirmed = true,
             FirstName = "Caner",
             LastName = "Bayraktar",
+            ImageId = Guid.Parse("F406068B-EC45-4D22-B22E-084B4705D8B5")
         };
         superadmin.PasswordHash = CreatePasswpordHash(superadmin, "Superadmin123");
         var admin = new AppUser 
@@ -43,7 +44,8 @@ public class UserMap : IEntityTypeConfiguration<AppUser>
             EmailConfirmed= false,
             PhoneNumberConfirmed = false,
             FirstName = "Çağatay",
-            LastName = "Bayraktar"
+            LastName = "Bayraktar",
+            ImageId = Guid.Parse("F5A4AAB2-01F0-407B-A20F-6CBD053EFD76")
         };
         admin.PasswordHash = CreatePasswpordHash(admin, "Admin123");
         builder.HasData(superadmin, admin);
