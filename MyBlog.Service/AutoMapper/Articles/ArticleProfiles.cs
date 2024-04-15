@@ -6,5 +6,6 @@ public class ArticleProfiles: Profile
         CreateMap<Article, ArticleViewModel>().ReverseMap();
         CreateMap<Article, ArticleUpdateViewModel>().ReverseMap();
         CreateMap<ArticleViewModel, ArticleUpdateViewModel>().ReverseMap();
+        CreateMap<Article, ArticleAddViewModel>().ReverseMap();
     }
 }
