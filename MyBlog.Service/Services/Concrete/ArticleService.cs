@@ -4,15 +4,48 @@ public class ArticleService : IArticleService
     private readonly IUnitOfWork unitOfWork;
     private readonly IMapper mapper;
 
-    public ArticleService(IUnitOfWork unitOfWork,IMapper mapper) 
+    public ArticleService(IUnitOfWork unitOfWork, IMapper mapper)
     {
         this.unitOfWork = unitOfWork;
         this.mapper = mapper;
     }
-    public async Task<List<ArticleViewModel>> GetAllArticleAsync()
+    public async Task<List<ArticleViewModel>> GetAllArticlesWithCategoryNonDeletedAsync()
     {
-        var articles= await unitOfWork.GetRepository<Article>().GetAllAsync();
+
+        var articles = await unitOfWork.GetRepository<Article>().GetAllAsync(x => !x.IsDeleted, x => x.Category);
         var map = mapper.Map<List<ArticleViewModel>>(articles);
         return map;
+    }
+    public async Task<ArticleViewModel> GetArticleWithCategoryNonDeletedAsync(Guid articleId)
+    {
+
+        var article = await unitOfWork.GetRepository<Article>().GetAsync(x => !x.IsDeleted && x.Id == articleId, x => x.Category);
+        var map = mapper.Map<ArticleViewModel>(article);
+        return map;
+    }
+
+    public async Task CreateArticleAsync(ArticleAddViewModel model)
+    {
+        var userId = Guid.Parse("EEB3A51F-5450-4C4F-8562-550D2DEAE903");
+        var article = new Article
+        {
+            Title = model.Title,
+            Content = model.Content,
+            CategoryId = model.CategoryId,
+            UserId = userId
+        };
+        await unitOfWork.GetRepository<Article>().AddAsync(article);
+        await unitOfWork.SaveAsync();
+    }
+    public async Task UpdateArticleAsync(ArticleUpdateViewModel model) 
+    {
+        var article = await unitOfWork.GetRepository<Article>().GetAsync(x => !x.IsDeleted && x.Id == model.Id, x => x.Category);
+        model.Title = article.Title;
+        model.Content = article.Content;
+        model.CategoryId = article.CategoryId;
+
+        
+        await unitOfWork.GetRepository<Article>().UpdateAsync(article);
+        await unitOfWork.SaveAsync();
     }
 }
