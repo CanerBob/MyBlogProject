@@ -33,10 +33,10 @@ public class ArticleController : Controller
     public async Task<IActionResult> Add(ArticleAddViewModel model)
     {
         await articleService.CreateArticleAsync(model);
-        return RedirectToAction("Index","Article",new { Area="Admin" });
+        return RedirectToAction("Index", "Article", new { Area = "Admin" });
     }
     [HttpGet]
-    public async Task<IActionResult> Update(Guid articleId) 
+    public async Task<IActionResult> Update(Guid articleId)
     {
         var article = await articleService.GetArticleWithCategoryNonDeletedAsync(articleId);
         var categories = await categoryService.GetAllCategoriesNonDeleted();
@@ -47,11 +47,16 @@ public class ArticleController : Controller
         return View(articleUpdateVm);
     }
     [HttpPost]
-    public async Task<IActionResult> Update(ArticleUpdateViewModel articleUpdateVm) 
+    public async Task<IActionResult> Update(ArticleUpdateViewModel articleUpdateVm)
     {
-       await articleService.UpdateArticleAsync(articleUpdateVm);
+        await articleService.UpdateArticleAsync(articleUpdateVm);
         var categories = await categoryService.GetAllCategoriesNonDeleted();
         articleUpdateVm.Categories = categories;
         return View(articleUpdateVm);
+    }
+    public async Task<IActionResult> Delete(Guid articleId)
+    {
+        await articleService.SafeDeleteArticleAsync(articleId);
+        return RedirectToAction("Index", "Article", new { Area = "Admin" });
     }
 }

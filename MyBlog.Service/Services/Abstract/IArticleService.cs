@@ -5,4 +5,5 @@ public interface IArticleService
     Task CreateArticleAsync(ArticleAddViewModel model);
     Task UpdateArticleAsync(ArticleUpdateViewModel model);
     Task<ArticleViewModel> GetArticleWithCategoryNonDeletedAsync(Guid articleId);
+    Task SafeDeleteArticleAsync(Guid articleId);
 }
