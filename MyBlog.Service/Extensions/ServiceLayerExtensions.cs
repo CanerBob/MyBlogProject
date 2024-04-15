@@ -1,4 +1,6 @@
-﻿namespace MyBlog.Service.Extensions;
+﻿
+
+namespace MyBlog.Service.Extensions;
 public static class ServiceLayerExtensions
 {
     public static IServiceCollection LoadServiceLayerExtensions(this IServiceCollection services)
@@ -9,6 +11,12 @@ public static class ServiceLayerExtensions
 
         services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
+        services.AddControllersWithViews().AddFluentValidation(opt => 
+        {
+            opt.RegisterValidatorsFromAssemblyContaining<ArticleValidator>();
+            opt.DisableDataAnnotationsValidation = true;
+            opt.ValidatorOptions.LanguageManager.Culture = new CultureInfo("tr");
+        });
         return services;
     }
 }
