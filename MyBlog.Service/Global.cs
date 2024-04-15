@@ -7,3 +7,4 @@ global using AutoMapper;
 global using MyBlog.Entity.ViewModels.Articles;
 global using MyBlog.Service.AutoMapper.Articles;
 global using System.Reflection;
+global using MyBlog.Entity.ViewModels.Categories;
