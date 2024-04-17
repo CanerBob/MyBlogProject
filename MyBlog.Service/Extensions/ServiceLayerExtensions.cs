@@ -1,6 +1,4 @@
-﻿
-
-namespace MyBlog.Service.Extensions;
+﻿namespace MyBlog.Service.Extensions;
 public static class ServiceLayerExtensions
 {
     public static IServiceCollection LoadServiceLayerExtensions(this IServiceCollection services)
@@ -8,6 +6,8 @@ public static class ServiceLayerExtensions
         services.AddScoped<IArticleService, ArticleService>();
 
         services.AddScoped<ICategoryService, CategoryService>();
+
+        services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
         services.AddAutoMapper(Assembly.GetExecutingAssembly());
 

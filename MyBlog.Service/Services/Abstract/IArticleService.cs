@@ -3,7 +3,7 @@ public interface IArticleService
 {
     Task<List<ArticleViewModel>> GetAllArticlesWithCategoryNonDeletedAsync();
     Task CreateArticleAsync(ArticleAddViewModel model);
-    Task UpdateArticleAsync(ArticleUpdateViewModel model);
+    Task<string> UpdateArticleAsync(ArticleUpdateViewModel articleUpdateVm);
     Task<ArticleViewModel> GetArticleWithCategoryNonDeletedAsync(Guid articleId);
-    Task SafeDeleteArticleAsync(Guid articleId);
+    Task<string> SafeDeleteArticleAsync(Guid articleId);
 }
