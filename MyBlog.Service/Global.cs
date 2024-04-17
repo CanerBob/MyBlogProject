@@ -15,3 +15,7 @@ global using System.Globalization;
 global using FluentValidation.Results;
 global using Microsoft.AspNetCore.Mvc.ModelBinding;
 global using Microsoft.AspNetCore.Http;
+global using MyBlog.Entity.ViewModels.Images;
+global using Microsoft.EntityFrameworkCore;
+global using Microsoft.AspNetCore.Hosting;
+global using MyBlog.Entity.Enums;
