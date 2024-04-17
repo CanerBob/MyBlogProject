@@ -1,4 +1,6 @@
-﻿namespace MyBlog.Service.Extensions;
+﻿using MyBlog.Service.Helpers.Images;
+
+namespace MyBlog.Service.Extensions;
 public static class ServiceLayerExtensions
 {
     public static IServiceCollection LoadServiceLayerExtensions(this IServiceCollection services)
@@ -8,6 +10,8 @@ public static class ServiceLayerExtensions
         services.AddScoped<ICategoryService, CategoryService>();
 
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+        services.AddScoped<IImageHelper , ImageHelper>();
 
         services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
