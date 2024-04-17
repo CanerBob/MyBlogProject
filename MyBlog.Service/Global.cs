@@ -14,3 +14,4 @@ global using FluentValidation.AspNetCore;
 global using System.Globalization;
 global using FluentValidation.Results;
 global using Microsoft.AspNetCore.Mvc.ModelBinding;
+global using Microsoft.AspNetCore.Http;
