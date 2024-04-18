@@ -1,4 +1,8 @@
-﻿namespace MyBlog.Service.Services.Concrete;
+﻿using MyBlog.Service.Extensions;
+using MyBlog.Service.Helpers.Images;
+using System.Security.Claims;
+
+namespace MyBlog.Service.Services.Concrete;
 public class ArticleService : IArticleService
 {
     private readonly IUnitOfWork unitOfWork;
@@ -12,8 +16,8 @@ public class ArticleService : IArticleService
         this.unitOfWork = unitOfWork;
         this.mapper = mapper;
         this.httpContextAccessor = httpContextAccessor;
-        this.imageHelper = imageHelper;
         _user = httpContextAccessor.HttpContext.User;
+        this.imageHelper = imageHelper;
     }
     public async Task<List<ArticleViewModel>> GetAllArticlesWithCategoryNonDeletedAsync()
     {
