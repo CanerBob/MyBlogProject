@@ -19,3 +19,7 @@ global using MyBlog.Entity.ViewModels.Images;
 global using Microsoft.EntityFrameworkCore;
 global using Microsoft.AspNetCore.Hosting;
 global using MyBlog.Entity.Enums;
+global using Microsoft.EntityFrameworkCore.Metadata.Internal;
+global using MyBlog.Service.Extensions;
+global using MyBlog.Service.Helpers.Images;
+global using System.Security.Claims;

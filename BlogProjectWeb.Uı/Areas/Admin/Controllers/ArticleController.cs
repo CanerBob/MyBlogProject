@@ -74,7 +74,6 @@ public class ArticleController : Controller
         var result = await validator.ValidateAsync(map);
         if (result.IsValid)
         {
-
            var title = await articleService.UpdateArticleAsync(articleUpdateVm);
             toast.AddWarningToastMessage(Messages.Article.Update(title), new ToastrOptions { Title = "İşlem Başarılı" });
             return RedirectToAction("Index", "Article", new { Area = "Admin" });
@@ -82,6 +81,7 @@ public class ArticleController : Controller
         else 
         {
             result.AddToModelState(this.ModelState);
+            
         }
         var categories = await categoryService.GetAllCategoriesNonDeleted();
         articleUpdateVm.Categories = categories;
