@@ -16,4 +16,19 @@ public static class Messages
             return $"{articleTitle} Başlıklı Makale Başarılı Bir Şekilde Silinmiştir!";
         }
     }
+    public static class Category
+    {
+        public static string Add(string categoryName)
+        {
+            return $"{categoryName} Başlıklı Kategori Başarılı Bir Şekilde Eklenmiştir!";
+        }
+        public static string Update(string categoryName)
+        {
+            return $"{categoryName} Başlıklı Kategori Başarılı Bir Şekilde Güncellenmiştir!";
+        }
+        public static string Delete(string categoryName)
+        {
+            return $"{categoryName} Başlıklı Kategori Başarılı Bir Şekilde Silinmiştir!";
+        }
+    }
 }
