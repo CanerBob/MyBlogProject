@@ -37,13 +37,13 @@ public class AuthController : Controller
                 }
                 else
                 {
-                    ModelState.AddModelError("", "E-posta veya Şifreniz Hatalı");
+                    ModelState.AddModelError("", "Kullanıcı Adınız veya Şifreniz Hatalı");
                     return View(model);
                 }
             }
             else
             {
-                ModelState.AddModelError("", "E-posta veya Şifreniz Hatalı");
+                ModelState.AddModelError("", "Kullanıcı Adınız veya Şifreniz Hatalı");
                 return View(model);
             }
         }

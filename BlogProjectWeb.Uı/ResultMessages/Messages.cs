@@ -31,4 +31,19 @@ public static class Messages
             return $"{categoryName} Başlıklı Kategori Başarılı Bir Şekilde Silinmiştir!";
         }
     }
+    public static class User
+    {
+        public static string Add(string userName)
+        {
+            return $"{userName} Başlıklı Kullanıcı Başarılı Bir Şekilde Eklenmiştir!";
+        }
+        public static string Update(string userName)
+        {
+            return $"{userName} Başlıklı Kullanıcı Başarılı Bir Şekilde Güncellenmiştir!";
+        }
+        public static string Delete(string userName)
+        {
+            return $"{userName} Başlıklı Kullanıcı Başarılı Bir Şekilde Silinmiştir!";
+        }
+    }
 }

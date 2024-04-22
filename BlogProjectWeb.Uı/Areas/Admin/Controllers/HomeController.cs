@@ -4,7 +4,7 @@ using MyBlog.Service.Services.Abstract;
 
 namespace BlogProjectWeb.Uı.Areas.Admin.Controllers;
 [Area("Admin")]
-[Authorize]
+//[Authorize]
 public class HomeController : Controller
 {
     private readonly IArticleService articleService;
