@@ -23,6 +23,12 @@ public class RoleMap : IEntityTypeConfiguration<AppRole>
             Name = "Admin",
             NormalizedName = "ADMİN",
             ConcurrencyStamp = Guid.NewGuid().ToString()
-        });
+        }, new AppRole
+        {
+            Id = Guid.Parse("5BED3A41-8332-481E-8F94-DC1F492FB619"),
+            Name = "User",
+            NormalizedName = "USER",
+            ConcurrencyStamp = Guid.NewGuid().ToString()
+        }) ;
     }
 }

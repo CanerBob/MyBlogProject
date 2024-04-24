@@ -53,16 +53,23 @@ namespace MyBlog.Data.Migrations
                         new
                         {
                             Id = new Guid("bcb92afc-a26c-4e9c-bfa8-802dfcaf9de7"),
-                            ConcurrencyStamp = "81625d80-e331-4ba3-8f28-458659ece754",
+                            ConcurrencyStamp = "84a927e9-b3f2-4456-a8f5-a65e2c7d0e46",
                             Name = "SuperAdmin",
                             NormalizedName = "SUPERADMIN"
                         },
                         new
                         {
                             Id = new Guid("17e138ba-5416-47de-bb0d-39fa981697f1"),
-                            ConcurrencyStamp = "e7b9ea68-115f-4acb-89eb-35dd43133bbd",
+                            ConcurrencyStamp = "13635e0b-59f8-4252-9260-028762e75337",
                             Name = "Admin",
                             NormalizedName = "ADMİN"
+                        },
+                        new
+                        {
+                            Id = new Guid("5bed3a41-8332-481e-8f94-dc1f492fb619"),
+                            ConcurrencyStamp = "d504b8f6-c5a3-4417-9b9e-92e067926eeb",
+                            Name = "User",
+                            NormalizedName = "USER"
                         });
                 });
 
@@ -173,7 +180,7 @@ namespace MyBlog.Data.Migrations
                         {
                             Id = new Guid("8a860501-de39-474c-9fa0-91d8d7dbde05"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "1fb94cd6-7e3c-4a58-8f7a-8ddff5ab1869",
+                            ConcurrencyStamp = "4ded59f3-e7eb-46ac-8740-7859c24f3122",
                             Email = "superadmin@gmail.com",
                             EmailConfirmed = true,
                             FirstName = "Caner",
@@ -182,10 +189,10 @@ namespace MyBlog.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "SUPERADMIN@GMAİL.COM",
                             NormalizedUserName = "SUPERADMIN@GMAİL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEBYH0fevVFkYbIVZYz5fkk35xwL2HarXSvV73UkHHzt6r0Vnl8OrxS/eJVrCWd0DDg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEFmYWKEKLWrtZFGjG9fv2vClm+dqhFNsK/wkmhBNy6nFlKMdoHlqy4r2jMnTsYl+dw==",
                             PhoneNumber = "0555 555 55 55",
                             PhoneNumberConfirmed = true,
-                            SecurityStamp = "c562891c-23cb-49c2-9a0a-59689d4be0bf",
+                            SecurityStamp = "b48dd12d-443e-461e-b4ec-5ad44b38e3ba",
                             TwoFactorEnabled = false,
                             UserName = "superadmin@gmail.com"
                         },
@@ -193,7 +200,7 @@ namespace MyBlog.Data.Migrations
                         {
                             Id = new Guid("8bbd8f46-95c1-4e5f-bf8b-dc5a1a8630dd"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "2426d847-43ec-4793-8379-0c6bf3e25ba5",
+                            ConcurrencyStamp = "50a6582b-2aa4-4956-b822-d0bc4477645d",
                             Email = "admin@gmail.com",
                             EmailConfirmed = false,
                             FirstName = "Çağatay",
@@ -202,10 +209,10 @@ namespace MyBlog.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMİN@GMAİL.COM",
                             NormalizedUserName = "ADMİN@GMAİL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEFLYdF7RMqxSVS8Y9Bnb9vAUwP9zyBJarj2IuUCuqRNRO1c2SDm+r4pRC69fMbut8A==",
+                            PasswordHash = "AQAAAAIAAYagAAAAELOjVTUvzU+MICc2z8UyRMj0cVhgEMS0IDeDWjwBlyXwh1O2xR6//UXiz1DUNK1rqg==",
                             PhoneNumber = "0555 555 55 11",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "b56e5e92-de63-4d9d-ac93-ba6c2c29e149",
+                            SecurityStamp = "2e4c392d-1277-42a4-b81c-3c09ab36c6f9",
                             TwoFactorEnabled = false,
                             UserName = "admin@gmail.com"
                         },
@@ -213,7 +220,7 @@ namespace MyBlog.Data.Migrations
                         {
                             Id = new Guid("eeb3a51f-5450-4c4f-8562-550d2deae903"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e6a451d6-c844-4936-9c0d-ca383d6bcc5f",
+                            ConcurrencyStamp = "7dde218e-c347-4293-978a-9c7e0a7c6017",
                             Email = "deneme@gmail.com",
                             EmailConfirmed = false,
                             FirstName = "Çağatay",
@@ -221,11 +228,11 @@ namespace MyBlog.Data.Migrations
                             LastName = "Bayraktar",
                             LockoutEnabled = false,
                             NormalizedEmail = "DENEME@GMAİL.COM",
-                            NormalizedUserName = "CANERBOB ",
-                            PasswordHash = "AQAAAAIAAYagAAAAEBbzBzmKCkaV041oJrV9CHSj5ewL42Jn2Apk48CHPZcE6B1IKB+EhjZ9W/W+aYhdkA==",
+                            NormalizedUserName = "CANERBOB",
+                            PasswordHash = "AQAAAAIAAYagAAAAEC2WxJ0ql0WoQCDiMS3m5ehyfELOakq0849dQpd76rw2x7OKxD+KM1JP7FFUy2Mepg==",
                             PhoneNumber = "0555 555 55 11",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "ff404cf4-9232-49e4-8eba-733d677a9ff1",
+                            SecurityStamp = "b7bee51f-a745-40b8-8f7a-29cfefc52705",
                             TwoFactorEnabled = false,
                             UserName = "CanerBob"
                         });
@@ -389,7 +396,7 @@ namespace MyBlog.Data.Migrations
                             CategoryId = new Guid("af5fdfe2-a680-4eb9-929e-8270f1ae2849"),
                             Content = "Günümüzde İnternetin gelişimi birçok alanda değişiklik ve yeniliklerin oluşmasına olanak sağlamıştır. Bu alanlardan biri de hiç şüphesiz Elektronik Ticaret alanı alanıdır. Elektronik Ticaret’in gelişimi ve değişimi internetten sonra büyük ölçüde değiştiren ve geliştiren ise Mobil Dünyadaki gelişmeler ve değişimler olmuştur. Mobil Araçların gelişimi ve yaygınlaşması ile birlikte insanların İnternet’e ve dolayısı ile Elektronik Web Sitelerine ulaşmaları ve alışveriş yapma oranlarında büyük bir artış olmuştur.",
                             CreatedBy = "Admin Test",
-                            CreatedDate = new DateTime(2024, 4, 4, 15, 26, 19, 825, DateTimeKind.Local).AddTicks(6302),
+                            CreatedDate = new DateTime(2024, 4, 24, 14, 6, 59, 709, DateTimeKind.Local).AddTicks(7045),
                             ImageId = new Guid("f406068b-ec45-4d22-b22e-084b4705d8b5"),
                             IsDeleted = false,
                             Title = "AspNet Core Deneme Makalesi",
@@ -402,7 +409,7 @@ namespace MyBlog.Data.Migrations
                             CategoryId = new Guid("0eb19997-5c94-4fcd-a327-fdd99e7b807c"),
                             Content = "Bir bina yapılmaya başlamadan önce mimarlar tarafından projenin ön çizimi, tasarımı çizilir. Tıpkı bunun gibi bir yazılım projesinin de yapılmaya başlamadan önce planlanması gerekir. Bu planlamaya “Yazılım Mimarisi” bu planı tasarlayan kişilere de “Yazılım Mimarı” denir. Mimari, yazılım uygulamasının bir donanımın, ağların ve bir işletmenin diğer bileşenleriyle nasıl etkileşime gireceğini ana hatlarıyla anlatan eksiksiz bir tasarım belgeleri seti içerir. Böylelikle yazılım geliştiricilerin izleyeceği yol genel hatları ile belirlenmiş olur.",
                             CreatedBy = "Admin Test",
-                            CreatedDate = new DateTime(2024, 4, 4, 15, 26, 19, 825, DateTimeKind.Local).AddTicks(6311),
+                            CreatedDate = new DateTime(2024, 4, 24, 14, 6, 59, 709, DateTimeKind.Local).AddTicks(7053),
                             ImageId = new Guid("f5a4aab2-01f0-407b-a20f-6cbd053efd76"),
                             IsDeleted = false,
                             Title = "Yazılım Mimarisi",
@@ -452,7 +459,7 @@ namespace MyBlog.Data.Migrations
                         {
                             Id = new Guid("af5fdfe2-a680-4eb9-929e-8270f1ae2849"),
                             CreatedBy = "Admin Test",
-                            CreatedDate = new DateTime(2024, 4, 4, 15, 26, 19, 825, DateTimeKind.Local).AddTicks(7510),
+                            CreatedDate = new DateTime(2024, 4, 24, 14, 6, 59, 709, DateTimeKind.Local).AddTicks(9121),
                             IsDeleted = false,
                             Name = "ASP .Net Core"
                         },
@@ -460,7 +467,7 @@ namespace MyBlog.Data.Migrations
                         {
                             Id = new Guid("0eb19997-5c94-4fcd-a327-fdd99e7b807c"),
                             CreatedBy = "Admin Test",
-                            CreatedDate = new DateTime(2024, 4, 4, 15, 26, 19, 825, DateTimeKind.Local).AddTicks(7513),
+                            CreatedDate = new DateTime(2024, 4, 24, 14, 6, 59, 709, DateTimeKind.Local).AddTicks(9125),
                             IsDeleted = false,
                             Name = "Yazılım Mimarisi"
                         });
@@ -511,7 +518,7 @@ namespace MyBlog.Data.Migrations
                         {
                             Id = new Guid("f406068b-ec45-4d22-b22e-084b4705d8b5"),
                             CreatedBy = "Admin Test",
-                            CreatedDate = new DateTime(2024, 4, 4, 15, 26, 19, 825, DateTimeKind.Local).AddTicks(8591),
+                            CreatedDate = new DateTime(2024, 4, 24, 14, 6, 59, 710, DateTimeKind.Local).AddTicks(237),
                             FileName = "/images/test",
                             FileType = "jpeg",
                             IsDeleted = false
@@ -520,7 +527,7 @@ namespace MyBlog.Data.Migrations
                         {
                             Id = new Guid("f5a4aab2-01f0-407b-a20f-6cbd053efd76"),
                             CreatedBy = "Admin Test",
-                            CreatedDate = new DateTime(2024, 4, 4, 15, 26, 19, 825, DateTimeKind.Local).AddTicks(8595),
+                            CreatedDate = new DateTime(2024, 4, 24, 14, 6, 59, 710, DateTimeKind.Local).AddTicks(242),
                             FileName = "/images/test",
                             FileType = "png",
                             IsDeleted = false
