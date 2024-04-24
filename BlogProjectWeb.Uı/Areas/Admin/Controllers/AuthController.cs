@@ -59,4 +59,10 @@ public class AuthController : Controller
         await signInManager.SignOutAsync();
         return RedirectToAction("Index","Home",new { Area = "" });
     }
+    [Authorize]
+    [HttpGet]
+    public IActionResult AccessDenied() 
+    {
+        return View();
+    }
 }

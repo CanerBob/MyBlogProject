@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace MyBlog.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class Init : Migration
+    public partial class Mig_1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -252,8 +252,9 @@ namespace MyBlog.Data.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { new Guid("17e138ba-5416-47de-bb0d-39fa981697f1"), "2016ce4c-af71-4f8e-a7b6-2e66578fd9d6", "Admin", "ADMİN" },
-                    { new Guid("bcb92afc-a26c-4e9c-bfa8-802dfcaf9de7"), "84d4c67c-2e9c-43f7-95fc-d64be4ea52f0", "SuperAdmin", "SUPERADMIN" }
+                    { new Guid("17e138ba-5416-47de-bb0d-39fa981697f1"), "13635e0b-59f8-4252-9260-028762e75337", "Admin", "ADMİN" },
+                    { new Guid("5bed3a41-8332-481e-8f94-dc1f492fb619"), "d504b8f6-c5a3-4417-9b9e-92e067926eeb", "User", "USER" },
+                    { new Guid("bcb92afc-a26c-4e9c-bfa8-802dfcaf9de7"), "84a927e9-b3f2-4456-a8f5-a65e2c7d0e46", "SuperAdmin", "SUPERADMIN" }
                 });
 
             migrationBuilder.InsertData(
@@ -261,8 +262,8 @@ namespace MyBlog.Data.Migrations
                 columns: new[] { "Id", "CreatedBy", "CreatedDate", "DeletedBy", "DeletedDate", "IsDeleted", "ModifiedBy", "ModifiesDate", "Name" },
                 values: new object[,]
                 {
-                    { new Guid("0eb19997-5c94-4fcd-a327-fdd99e7b807c"), "Admin Test", new DateTime(2024, 4, 4, 12, 39, 25, 187, DateTimeKind.Local).AddTicks(592), null, null, false, null, null, "Yazılım Mimarisi" },
-                    { new Guid("af5fdfe2-a680-4eb9-929e-8270f1ae2849"), "Admin Test", new DateTime(2024, 4, 4, 12, 39, 25, 187, DateTimeKind.Local).AddTicks(589), null, null, false, null, null, "ASP .Net Core" }
+                    { new Guid("0eb19997-5c94-4fcd-a327-fdd99e7b807c"), "Admin Test", new DateTime(2024, 4, 24, 14, 6, 59, 709, DateTimeKind.Local).AddTicks(9125), null, null, false, null, null, "Yazılım Mimarisi" },
+                    { new Guid("af5fdfe2-a680-4eb9-929e-8270f1ae2849"), "Admin Test", new DateTime(2024, 4, 24, 14, 6, 59, 709, DateTimeKind.Local).AddTicks(9121), null, null, false, null, null, "ASP .Net Core" }
                 });
 
             migrationBuilder.InsertData(
@@ -270,8 +271,8 @@ namespace MyBlog.Data.Migrations
                 columns: new[] { "Id", "CreatedBy", "CreatedDate", "DeletedBy", "DeletedDate", "FileName", "FileType", "IsDeleted", "ModifiedBy", "ModifiesDate" },
                 values: new object[,]
                 {
-                    { new Guid("f406068b-ec45-4d22-b22e-084b4705d8b5"), "Admin Test", new DateTime(2024, 4, 4, 12, 39, 25, 187, DateTimeKind.Local).AddTicks(1974), null, null, "/images/test", "jpeg", false, null, null },
-                    { new Guid("f5a4aab2-01f0-407b-a20f-6cbd053efd76"), "Admin Test", new DateTime(2024, 4, 4, 12, 39, 25, 187, DateTimeKind.Local).AddTicks(1980), null, null, "/images/test", "png", false, null, null }
+                    { new Guid("f406068b-ec45-4d22-b22e-084b4705d8b5"), "Admin Test", new DateTime(2024, 4, 24, 14, 6, 59, 710, DateTimeKind.Local).AddTicks(237), null, null, "/images/test", "jpeg", false, null, null },
+                    { new Guid("f5a4aab2-01f0-407b-a20f-6cbd053efd76"), "Admin Test", new DateTime(2024, 4, 24, 14, 6, 59, 710, DateTimeKind.Local).AddTicks(242), null, null, "/images/test", "png", false, null, null }
                 });
 
             migrationBuilder.InsertData(
@@ -279,8 +280,9 @@ namespace MyBlog.Data.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "ImageId", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { new Guid("8a860501-de39-474c-9fa0-91d8d7dbde05"), 0, "1573ebc6-4373-47e3-ae4f-07f72e1352bc", "superadmin@gmail.com", true, "Caner", new Guid("f406068b-ec45-4d22-b22e-084b4705d8b5"), "Bayraktar", false, null, "SUPERADMIN@GMAİL.COM", "SUPERADMIN@GMAİL.COM", "AQAAAAIAAYagAAAAEDdfvBt/XPqGS+zmtlwRBgZmWf2UTH7Wxx918jP0FMiXN4Cg4fIZ40HZL/FpGbIoUg==", "0555 555 55 55", true, null, false, "superadmin@gmail.com" },
-                    { new Guid("8bbd8f46-95c1-4e5f-bf8b-dc5a1a8630dd"), 0, "b6890191-f65b-4451-a902-c920830b682c", "admin@gmail.com", false, "Çağatay", new Guid("f5a4aab2-01f0-407b-a20f-6cbd053efd76"), "Bayraktar", false, null, "ADMİN@GMAİL.COM", "ADMİN@GMAİL.COM", "AQAAAAIAAYagAAAAEBsfTO8NdI/pHkpCszYK94h8sR5v7jr7p4EMc12SXYgvUfZFCR0rAaKN82ig9EMOkg==", "0555 555 55 11", false, null, false, "admin@gmail.com" }
+                    { new Guid("8a860501-de39-474c-9fa0-91d8d7dbde05"), 0, "4ded59f3-e7eb-46ac-8740-7859c24f3122", "superadmin@gmail.com", true, "Caner", new Guid("f406068b-ec45-4d22-b22e-084b4705d8b5"), "Bayraktar", false, null, "SUPERADMIN@GMAİL.COM", "SUPERADMIN@GMAİL.COM", "AQAAAAIAAYagAAAAEFmYWKEKLWrtZFGjG9fv2vClm+dqhFNsK/wkmhBNy6nFlKMdoHlqy4r2jMnTsYl+dw==", "0555 555 55 55", true, "b48dd12d-443e-461e-b4ec-5ad44b38e3ba", false, "superadmin@gmail.com" },
+                    { new Guid("8bbd8f46-95c1-4e5f-bf8b-dc5a1a8630dd"), 0, "50a6582b-2aa4-4956-b822-d0bc4477645d", "admin@gmail.com", false, "Çağatay", new Guid("f5a4aab2-01f0-407b-a20f-6cbd053efd76"), "Bayraktar", false, null, "ADMİN@GMAİL.COM", "ADMİN@GMAİL.COM", "AQAAAAIAAYagAAAAELOjVTUvzU+MICc2z8UyRMj0cVhgEMS0IDeDWjwBlyXwh1O2xR6//UXiz1DUNK1rqg==", "0555 555 55 11", false, "2e4c392d-1277-42a4-b81c-3c09ab36c6f9", false, "admin@gmail.com" },
+                    { new Guid("eeb3a51f-5450-4c4f-8562-550d2deae903"), 0, "7dde218e-c347-4293-978a-9c7e0a7c6017", "deneme@gmail.com", false, "Çağatay", new Guid("f5a4aab2-01f0-407b-a20f-6cbd053efd76"), "Bayraktar", false, null, "DENEME@GMAİL.COM", "CANERBOB", "AQAAAAIAAYagAAAAEC2WxJ0ql0WoQCDiMS3m5ehyfELOakq0849dQpd76rw2x7OKxD+KM1JP7FFUy2Mepg==", "0555 555 55 11", false, "b7bee51f-a745-40b8-8f7a-29cfefc52705", false, "CanerBob" }
                 });
 
             migrationBuilder.InsertData(
@@ -288,8 +290,8 @@ namespace MyBlog.Data.Migrations
                 columns: new[] { "Id", "CategoryId", "Content", "CreatedBy", "CreatedDate", "DeletedBy", "DeletedDate", "ImageId", "IsDeleted", "ModifiedBy", "ModifiesDate", "Title", "UserId", "ViewCount" },
                 values: new object[,]
                 {
-                    { new Guid("0eb19997-5c94-4fcd-a327-fdd99e7b807c"), new Guid("0eb19997-5c94-4fcd-a327-fdd99e7b807c"), "Bir bina yapılmaya başlamadan önce mimarlar tarafından projenin ön çizimi, tasarımı çizilir. Tıpkı bunun gibi bir yazılım projesinin de yapılmaya başlamadan önce planlanması gerekir. Bu planlamaya “Yazılım Mimarisi” bu planı tasarlayan kişilere de “Yazılım Mimarı” denir. Mimari, yazılım uygulamasının bir donanımın, ağların ve bir işletmenin diğer bileşenleriyle nasıl etkileşime gireceğini ana hatlarıyla anlatan eksiksiz bir tasarım belgeleri seti içerir. Böylelikle yazılım geliştiricilerin izleyeceği yol genel hatları ile belirlenmiş olur.", "Admin Test", new DateTime(2024, 4, 4, 12, 39, 25, 186, DateTimeKind.Local).AddTicks(9042), null, null, new Guid("f5a4aab2-01f0-407b-a20f-6cbd053efd76"), false, null, null, "Yazılım Mimarisi", new Guid("8bbd8f46-95c1-4e5f-bf8b-dc5a1a8630dd"), 16 },
-                    { new Guid("f90267ab-e120-46a2-a235-3cad215e7953"), new Guid("af5fdfe2-a680-4eb9-929e-8270f1ae2849"), "Günümüzde İnternetin gelişimi birçok alanda değişiklik ve yeniliklerin oluşmasına olanak sağlamıştır. Bu alanlardan biri de hiç şüphesiz Elektronik Ticaret alanı alanıdır. Elektronik Ticaret’in gelişimi ve değişimi internetten sonra büyük ölçüde değiştiren ve geliştiren ise Mobil Dünyadaki gelişmeler ve değişimler olmuştur. Mobil Araçların gelişimi ve yaygınlaşması ile birlikte insanların İnternet’e ve dolayısı ile Elektronik Web Sitelerine ulaşmaları ve alışveriş yapma oranlarında büyük bir artış olmuştur.", "Admin Test", new DateTime(2024, 4, 4, 12, 39, 25, 186, DateTimeKind.Local).AddTicks(9034), null, null, new Guid("f406068b-ec45-4d22-b22e-084b4705d8b5"), false, null, null, "AspNet Core Deneme Makalesi", new Guid("8a860501-de39-474c-9fa0-91d8d7dbde05"), 15 }
+                    { new Guid("0eb19997-5c94-4fcd-a327-fdd99e7b807c"), new Guid("0eb19997-5c94-4fcd-a327-fdd99e7b807c"), "Bir bina yapılmaya başlamadan önce mimarlar tarafından projenin ön çizimi, tasarımı çizilir. Tıpkı bunun gibi bir yazılım projesinin de yapılmaya başlamadan önce planlanması gerekir. Bu planlamaya “Yazılım Mimarisi” bu planı tasarlayan kişilere de “Yazılım Mimarı” denir. Mimari, yazılım uygulamasının bir donanımın, ağların ve bir işletmenin diğer bileşenleriyle nasıl etkileşime gireceğini ana hatlarıyla anlatan eksiksiz bir tasarım belgeleri seti içerir. Böylelikle yazılım geliştiricilerin izleyeceği yol genel hatları ile belirlenmiş olur.", "Admin Test", new DateTime(2024, 4, 24, 14, 6, 59, 709, DateTimeKind.Local).AddTicks(7053), null, null, new Guid("f5a4aab2-01f0-407b-a20f-6cbd053efd76"), false, null, null, "Yazılım Mimarisi", new Guid("8bbd8f46-95c1-4e5f-bf8b-dc5a1a8630dd"), 16 },
+                    { new Guid("f90267ab-e120-46a2-a235-3cad215e7953"), new Guid("af5fdfe2-a680-4eb9-929e-8270f1ae2849"), "Günümüzde İnternetin gelişimi birçok alanda değişiklik ve yeniliklerin oluşmasına olanak sağlamıştır. Bu alanlardan biri de hiç şüphesiz Elektronik Ticaret alanı alanıdır. Elektronik Ticaret’in gelişimi ve değişimi internetten sonra büyük ölçüde değiştiren ve geliştiren ise Mobil Dünyadaki gelişmeler ve değişimler olmuştur. Mobil Araçların gelişimi ve yaygınlaşması ile birlikte insanların İnternet’e ve dolayısı ile Elektronik Web Sitelerine ulaşmaları ve alışveriş yapma oranlarında büyük bir artış olmuştur.", "Admin Test", new DateTime(2024, 4, 24, 14, 6, 59, 709, DateTimeKind.Local).AddTicks(7045), null, null, new Guid("f406068b-ec45-4d22-b22e-084b4705d8b5"), false, null, null, "AspNet Core Deneme Makalesi", new Guid("8a860501-de39-474c-9fa0-91d8d7dbde05"), 15 }
                 });
 
             migrationBuilder.InsertData(
