@@ -24,9 +24,16 @@ public class CategoryController : Controller
         this.validator = validator;
         this.toast = toast;
     }
+    [HttpGet]
     public async Task<IActionResult> Index()
     {
         var categories = await categoryService.GetAllCategoriesNonDeleted();
+        return View(categories);
+    }
+    [HttpGet]
+    public async Task<IActionResult> DeletedCategory() 
+    {
+        var categories = await categoryService.GetAllCategoriesDeleted();
         return View(categories);
     }
     [HttpGet]
@@ -92,6 +99,12 @@ public class CategoryController : Controller
     {
         var name = await categoryService.SafeDeleteCategoryAsync(categoryId);
         toast.AddWarningToastMessage(Messages.Category.Delete(name), new ToastrOptions { Title = "İşlem Başarılı" });
+        return RedirectToAction("Index", "Category", new { Area = "Admin" });
+    }
+    public async Task<IActionResult> UndoDelete(Guid categoryId)
+    { 
+        var name = await categoryService.UndoDeleteCategoryAsync(categoryId);
+        toast.AddSuccessToastMessage(Messages.Category.UndoDelete(name), new ToastrOptions { Title = "İşlem Başarılı" });
         return RedirectToAction("Index", "Category", new { Area = "Admin" });
     }
 }

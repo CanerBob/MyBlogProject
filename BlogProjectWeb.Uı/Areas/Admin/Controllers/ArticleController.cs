@@ -27,9 +27,16 @@ public class ArticleController : Controller
         this.validator = validator;
         this.toast = toast;
     }
+    [HttpGet]
     public async Task<IActionResult> Index()
     {
         var articles = await articleService.GetAllArticlesWithCategoryNonDeletedAsync();
+        return View(articles);
+    }
+    [HttpGet]
+    public async Task<IActionResult> DeletedArticles() 
+    {
+        var articles = await articleService.GetAllArticlesWithCategoryDeletedAsync();
         return View(articles);
     }
     [HttpGet]
@@ -91,6 +98,12 @@ public class ArticleController : Controller
     {
        var title = await articleService.SafeDeleteArticleAsync(articleId);
         toast.AddErrorToastMessage(Messages.Article.Delete(title), new ToastrOptions { Title = "İşlem Başarılı" });
+        return RedirectToAction("Index", "Article", new { Area = "Admin" });
+    }
+    public async Task<IActionResult> UndoDeleted(Guid articleId) 
+    {
+        var title = await articleService.UndoDeleteArticleAsync(articleId);
+        toast.AddSuccessToastMessage(Messages.Article.UndoDelete(title), new ToastrOptions { Title = "İşlem Başarılı" });
         return RedirectToAction("Index", "Article", new { Area = "Admin" });
     }
 }

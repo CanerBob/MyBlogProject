@@ -91,4 +91,23 @@ public class ArticleService : IArticleService
         await unitOfWork.SaveAsync();
         return article.Title;
     }
+
+    public async Task<List<ArticleViewModel>> GetAllArticlesWithCategoryDeletedAsync()
+    {
+        var article = await unitOfWork.GetRepository<Article>().GetAllAsync(x => x.IsDeleted, x=>x.Category);
+        var map = mapper.Map<List<ArticleViewModel>>(article);
+        return map;
+    }
+
+    public async Task<string> UndoDeleteArticleAsync(Guid articleId)
+    {
+        var userName = _user.GetLoggedInUserName();
+        var article = await unitOfWork.GetRepository<Article>().GetByGuidAsync(articleId);
+        article.IsDeleted = false;
+        article.DeletedDate = null;
+        article.DeletedBy = null;
+        await unitOfWork.GetRepository<Article>().UpdateAsync(article);
+        await unitOfWork.SaveAsync();
+        return article.Title;
+    }
 }

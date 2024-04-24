@@ -13,7 +13,11 @@ public static class Messages
         }
         public static string Delete(string articleTitle)
         {
-            return $"{articleTitle} Başlıklı Makale Başarılı Bir Şekilde Silinmiştir!";
+            return $"{articleTitle} Başlıklı Makale Başarılı Bir Şekilde Çöp Kutusuna Taşınmıştır!";
+        }
+        public static string UndoDelete(string articleTitle) 
+        {
+            return $"{articleTitle} Başlıklı Makale Başarılı Bir Şekilde Geri Alınmıştır";
         }
     }
     public static class Category
@@ -28,7 +32,11 @@ public static class Messages
         }
         public static string Delete(string categoryName)
         {
-            return $"{categoryName} Başlıklı Kategori Başarılı Bir Şekilde Silinmiştir!";
+            return $"{categoryName} Başlıklı Kategori Başarılı Bir Şekilde Çöp Kutusuna Taşınmıştır!";
+        }
+        public static string UndoDelete(string categoryName)
+        {
+            return $"{categoryName} Başlıklı Kategori Başarılı Bir Şekilde Geri Döndürülmüştür!";
         }
     }
     public static class User
