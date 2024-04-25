@@ -7,7 +7,7 @@
 		<div class="table-responsive text-nowrap m-5">
 
 			@{
-				@if (!User.IsInRole("User"))
+				@if (!User.IsInRole($"{RoleConsts.user}"))
 				{
 					<a asp-area="Admin" asp-controller="Article" asp-action="Add" class="btn btn-success mb-3">
 						Makale Ekle <i class="bx bx-plus"></i>
@@ -26,7 +26,7 @@
 						<th>Oluşturan</th>
 						<th>Oluşturma  Tarihi</th>
 						<th>Durum</th>
-						@if (!User.IsInRole("User"))
+						@if (!User.IsInRole($"{RoleConsts.user}"))
 						{
 							<th>İşlemler</th>
 						}
@@ -39,7 +39,7 @@
 						<th>Oluşturan</th>
 						<th>Oluşturma  Tarihi</th>
 						<th>Durum</th>
-						@if (!User.IsInRole("User"))
+						@if (!User.IsInRole($"{RoleConsts.user}"))
 						{
 							<th>İşlemler</th>
 						}
@@ -55,7 +55,7 @@
 							<td>@article.CreatedDate.ToShortDateString()</td>
 							<td>@(article.IsDeleted ? "Aktif Değil" : "Aktif")</td>
 							@{
-								@if (!User.IsInRole("User"))
+								@if (!User.IsInRole($"{RoleConsts.user}"))
 								{
 									<td>
 										<a class="btn btn-primary btn-sm" data-id="@article.Id" asp-area="Admin" asp-controller="Article" asp-action="Update" asp-route-articleId="@article.Id">
