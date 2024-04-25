@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using BlogProjectWeb.Uı.Areas.Admin.Consts;
 using BlogProjectWeb.Uı.ResultMessages;
 using FluentValidation;
 using Microsoft.AspNetCore.Authorization;
@@ -29,28 +30,28 @@ public class ArticleController : Controller
         this.toast = toast;
     }
     [HttpGet]
-    [Authorize(Roles = "SuperAdmin, Admin , User")]
+    [Authorize(Roles = $"{RoleConsts.superAdmin},{RoleConsts.admin},{RoleConsts.user}")]
     public async Task<IActionResult> Index()
     {
         var articles = await articleService.GetAllArticlesWithCategoryNonDeletedAsync();
         return View(articles);
     }
     [HttpGet]
-    [Authorize(Roles = "SuperAdmin, Admin")]
+    [Authorize(Roles = $"{RoleConsts.superAdmin},{RoleConsts.admin}")]
     public async Task<IActionResult> DeletedArticles() 
     {
         var articles = await articleService.GetAllArticlesWithCategoryDeletedAsync();
         return View(articles);
     }
     [HttpGet]
-    [Authorize(Roles = "SuperAdmin, Admin")]
+    [Authorize(Roles = $"{RoleConsts.superAdmin},{RoleConsts.admin}")]
     public async Task<IActionResult> Add()
     {
         var categories = await categoryService.GetAllCategoriesNonDeleted();
         return View(new ArticleAddViewModel { Categories = categories });
     }
     [HttpPost]
-    [Authorize(Roles = "SuperAdmin, Admin")]
+    [Authorize(Roles = $"{RoleConsts.superAdmin},{RoleConsts.admin}")]
     public async Task<IActionResult> Add(ArticleAddViewModel model)
     {
         var map = mapper.Map<Article>(model);
@@ -69,7 +70,7 @@ public class ArticleController : Controller
         }
     }
     [HttpGet]
-    [Authorize(Roles = "SuperAdmin, Admin")]
+    [Authorize(Roles = $"{RoleConsts.superAdmin},{RoleConsts.admin}")]
     public async Task<IActionResult> Update(Guid articleId)
     {
         var article = await articleService.GetArticleWithCategoryNonDeletedAsync(articleId);
@@ -81,7 +82,7 @@ public class ArticleController : Controller
         return View(articleUpdateVm);
     }
     [HttpPost]
-    [Authorize(Roles = "SuperAdmin, Admin")]
+    [Authorize(Roles = $"{RoleConsts.superAdmin},{RoleConsts.admin}")]
     public async Task<IActionResult> Update(ArticleUpdateViewModel articleUpdateVm)
     {
         var map = mapper.Map<Article>(articleUpdateVm);
@@ -101,14 +102,14 @@ public class ArticleController : Controller
         articleUpdateVm.Categories = categories;
         return View(articleUpdateVm);
     }
-    [Authorize(Roles = "SuperAdmin, Admin")]
+    [Authorize(Roles = $"{RoleConsts.superAdmin},{RoleConsts.admin}")]
     public async Task<IActionResult> Delete(Guid articleId)
     {
        var title = await articleService.SafeDeleteArticleAsync(articleId);
         toast.AddErrorToastMessage(Messages.Article.Delete(title), new ToastrOptions { Title = "İşlem Başarılı" });
         return RedirectToAction("Index", "Article", new { Area = "Admin" });
     }
-    [Authorize(Roles = "SuperAdmin, Admin")]
+    [Authorize(Roles = $"{RoleConsts.superAdmin},{RoleConsts.admin}")]
     public async Task<IActionResult> UndoDeleted(Guid articleId) 
     {
         var title = await articleService.UndoDeleteArticleAsync(articleId);

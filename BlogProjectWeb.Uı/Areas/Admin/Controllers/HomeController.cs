@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using MyBlog.Entity.Entities;
 using MyBlog.Service.Services.Abstract;
+using System.Security.Claims;
 
 namespace BlogProjectWeb.Uı.Areas.Admin.Controllers;
 [Area("Admin")]
@@ -9,10 +12,10 @@ public class HomeController : Controller
 {
     private readonly IArticleService articleService;
 
-    public HomeController(IArticleService articleService)
+	public HomeController(IArticleService articleService)
     {
         this.articleService = articleService;
-    }
+	}
     public async Task<IActionResult> Index()
     {
         var articles = await articleService.GetAllArticlesWithCategoryNonDeletedAsync();
