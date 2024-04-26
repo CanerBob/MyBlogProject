@@ -1,0 +1,71 @@
+﻿@model UserProfileViewModel
+<div class="container-xxl flex-grow-1 container-p-y">
+
+
+	<h4 class="py-3 mb-4">
+		<span class="text-muted fw-light">Profil Ayarları /</span> Profil
+	</h4>
+
+	<div class="row">
+		<div class="col-md-12">
+
+			<div class="card mb-4">
+				<h5 class="card-header">Profil Bilgilerim</h5>
+				<!-- Account -->
+			
+				<hr class="my-0">
+				<div class="card-body">
+					<form asp-area="Admin" asp-controller="User" asp-action="Profile" method="POST">
+						<div asp-validation-summary="All" class="text-danger"></div>
+						<div class="row">
+							<div class="mb-3 col-md-12">
+								<label asp-for="FirstName" class="form-label">İsim</label>
+								<input class="form-control" type="text" asp-for="FirstName">
+								<span asp-validation-for="FirstName"></span>
+							</div>
+							<div class="mb-3 col-md-12">
+								<label asp-for="LastName" class="form-label">İsim</label>
+								<input class="form-control" type="text" asp-for="LastName">
+								<span asp-validation-for="LastName"></span>
+							</div>
+							<div class="mb-3 col-md-12">
+								<label asp-for="UserName" class="form-label">Kullanıcı Adı</label>
+								<input class="form-control" type="text" asp-for="UserName">
+								<span asp-validation-for="UserName"></span>
+							</div>
+							<div class="mb-3 col-md-12">
+								<label asp-for="Email" class="form-label">E-Mail</label>
+								<input class="form-control" type="text" asp-for="Email">
+								<span asp-validation-for="Email"></span>
+							</div>
+							<div class="mb-3 col-md-12">
+								<label asp-for="PhoneNumber" class="form-label">Telefon Numarası</label>
+								<input class="form-control" type="text" asp-for="PhoneNumber">
+								<span asp-validation-for="PhoneNumber"></span>
+							</div>
+							<div class="mb-3 col-md-12">
+								<label asp-for="CurrentPassword" class="form-label">Mevcut Parola</label>
+								<input class="form-control" type="text" asp-for="CurrentPassword">
+								<span asp-validation-for="CurrentPassword"></span>
+							</div>
+						</div>
+						<div class="mb-3 col-md-12">
+							<label asp-for="NewPassword" class="form-label">Yeni Parola</label>
+							<input class="form-control" type="text" asp-for="NewPassword">
+							<span asp-validation-for="NewPassword"></span>
+						</div>
+						<div class="mt-2">
+							<button type="submit" class="btn btn-primary me-2">Değişiklikleri Uygula</button>
+						</div>
+					</form>
+				</div>
+
+			</div>
+			<!-- /Account -->
+		</div>
+
+	</div>
+</div>
+
+
+</div>

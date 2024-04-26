@@ -15,12 +15,12 @@ public class DashboardHeaderViewComponent: ViewComponent
 		this.userManager = userManager;
         this.mapper = mapper;
     }
-    public async Task<IViewComponentResult> InvokeAsync() 
-	{
-		var loggedInUser = await userManager.GetUserAsync(HttpContext.User);
+    public async Task<IViewComponentResult> InvokeAsync()
+    {
+        var loggedInUser = await userManager.GetUserAsync(HttpContext.User);
         var map = mapper.Map<UserViewModel>(loggedInUser);
         var role = string.Join("", await userManager.GetRolesAsync(loggedInUser));
         map.Role = role;
-		return View(map);
-	}
+        return View(map);
+    }
 }

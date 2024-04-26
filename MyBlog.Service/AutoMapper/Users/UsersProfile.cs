@@ -9,5 +9,6 @@ public class UsersProfile: Profile
         CreateMap<AppUser, UserViewModel>().ReverseMap();
         CreateMap<AppUser, UserAddViewModel>().ReverseMap();
         CreateMap<AppUser, UserUpdateViewModel>().ReverseMap();
+        CreateMap<AppUser, UserProfileViewModel>().ReverseMap();
     }
 }
