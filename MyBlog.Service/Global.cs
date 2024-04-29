@@ -24,3 +24,5 @@ global using MyBlog.Service.Extensions;
 global using MyBlog.Service.Helpers.Images;
 global using System.Security.Claims;
 global using Microsoft.AspNetCore.Identity;
+global using MyBlog.Entity.ViewModels.Users;
+global using MyBlog.Entity.ViewModels.UserViewModels;
