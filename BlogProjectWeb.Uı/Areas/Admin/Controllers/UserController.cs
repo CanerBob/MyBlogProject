@@ -130,53 +130,24 @@ public class UserController : Controller
 	[HttpGet]
 	public async Task<IActionResult> Profile()
 	{
-		var user = await userManager.GetUserAsync(HttpContext.User);
-		var map = mapper.Map<UserProfileViewModel>(user);
-		return View(map);
+		var profile = await userService.GetUserProfileAsync();
+		return View(profile);
 	}
 	[HttpPost]
 	public async Task<IActionResult> Profile(UserProfileViewModel model)
 	{
-		var user = await userManager.GetUserAsync(HttpContext.User);
 		if (ModelState.IsValid)
 		{
-			var isVerified = await userManager.CheckPasswordAsync(user, model.CurrentPassword);
-			if (isVerified && model.NewPassword != null)
+			var result = await userService.UserProfileEditAsync(model);
+			if (result)
 			{
-				var result = await userManager.ChangePasswordAsync(user, model.CurrentPassword, model.NewPassword);
-				if (result.Succeeded)
-				{
-					await userManager.UpdateSecurityStampAsync(user);
-					await signInManager.SignOutAsync();
-					await signInManager.PasswordSignInAsync(user, model.NewPassword, true, false);
-					user.FirstName = model.FirstName;
-					user.LastName = model.LastName;
-					user.PhoneNumber = model.PhoneNumber;
-					user.UserName = model.UserName;
-					await userManager.UpdateAsync(user);
-					toast.AddSuccessToastMessage("Şifreniz ve Bilgileriniz Başarıyla Güncellenmiştir.");
-					return View();
-				}
-				else
-				{
-					result.AddToIdentityModelState(ModelState);
-					return View(model);
-				}
+				toast.AddSuccessToastMessage("Profil Güncelleme İşlemleri Tamanlandı", new ToastrOptions { Title = "İşlem Başarılı" });
+				return RedirectToAction("Index", "Home", new { Area = "Admin" });
 			}
-			else if (isVerified)
-			{
-				await userManager.UpdateSecurityStampAsync(user);
-				user.FirstName = model.FirstName;
-				user.LastName = model.LastName;
-				user.PhoneNumber = model.PhoneNumber;
-				user.UserName = model.UserName;
-				await userManager.UpdateAsync(user);
-				toast.AddSuccessToastMessage("Bilgileriniz Başarıyla Güncellenmiştir.");
-				return View();
-			}
-			else 
-			{
-				toast.AddErrorToastMessage("Bilgilerinirz Güncellenirken Bir Hata Oluştu");
+			else
+			{ 
+				toast.AddErrorToastMessage("Profil Güncellenirken Bir Hata Oluştu", new ToastrOptions { Title = "Hata" });
+			return View(model);
 			}
 		}
 		return View(model);
