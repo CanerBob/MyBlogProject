@@ -1,38 +1,17 @@
-﻿using AutoMapper;
-using BlogProjectWeb.Uı.ResultMessages;
-using FluentValidation;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using MyBlog.Entity.Entities;
-using MyBlog.Entity.ViewModels.Users;
-using MyBlog.Entity.ViewModels.UserViewModels;
-using MyBlog.Service.Extensions;
-using MyBlog.Service.Services.Abstract;
-using NToastNotify;
-using System.Data;
-
-namespace BlogProjectWeb.Uı.Areas.Admin.Controllers;
+﻿namespace BlogProjectWeb.Uı.Areas.Admin.Controllers;
 [Area("Admin")]
 public class UserController : Controller
 {
-	private readonly UserManager<AppUser> userManager;
 	private readonly IUserService userService;
 	private readonly IValidator<AppUser> validator;
-	private readonly RoleManager<AppRole> roleManager;
 	private readonly IMapper mapper;
 	private readonly IToastNotification toast;
-	private readonly SignInManager<AppUser> signInManager;
-
-	public UserController(UserManager<AppUser> userManager,IUserService userService, IValidator<AppUser> validator, RoleManager<AppRole> roleManager, IMapper mapper, IToastNotification toast, SignInManager<AppUser> signInManager)
+	public UserController(IUserService userService, IValidator<AppUser> validator, IMapper mapper, IToastNotification toast)
 	{
-		this.userManager = userManager;
 		this.userService = userService;
 		this.validator = validator;
-		this.roleManager = roleManager;
 		this.mapper = mapper;
 		this.toast = toast;
-		this.signInManager = signInManager;
 	}
 	public async Task<IActionResult> Index()
 	{

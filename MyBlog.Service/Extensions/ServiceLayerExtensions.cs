@@ -13,6 +13,8 @@ public static class ServiceLayerExtensions
 
 		services.AddScoped<IImageHelper, ImageHelper>();
 
+		services.AddScoped<IDashboardService, DashboardService>();
+
 		services.AddScoped<IUserService, UserService>();
 
 		services.AddAutoMapper(Assembly.GetExecutingAssembly());
